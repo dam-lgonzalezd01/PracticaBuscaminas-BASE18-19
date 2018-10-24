@@ -7,7 +7,8 @@ import java.util.Random;
  * Si hay una mina en una posición guarda el número -1
  * Si no hay una mina, se guarda cuántas minas hay alrededor.
  * Almacena la puntuación de la partida
- * @author jesusredondogarcia
+ * @author Luis Gonzalez 
+ * 
  *
  */
 public class ControlJuego {
@@ -37,7 +38,18 @@ public class ControlJuego {
 	public void inicializarPartida(){
 
 		//TODO: Repartir minas e inicializar puntaci�n. Si hubiese un tablero anterior, lo pongo todo a cero para inicializarlo.
+		puntuacion = 0;
+		Random rd = new Random();
+		int fila = rd.nextInt(10);
+		int columna = rd.nextInt(10);
+		int contador = 0;
 		
+		while (contador != MINAS_INICIALES) {
+			if (tablero[fila][columna] != MINA ) {
+				tablero[fila][columna] = MINA;
+				contador++;
+			}
+		}
 		
 		
 		//Al final del m�todo hay que guardar el n�mero de minas para las casillas que no son mina:
@@ -59,7 +71,8 @@ public class ControlJuego {
 	 * @return : El número de minas que hay alrededor de la casilla [i][j]
 	 **/
 	private int calculoMinasAdjuntas(int i, int j){
-
+		int numeroMinas = 0;
+		
 	}
 	
 	/**
@@ -112,6 +125,7 @@ public class ControlJuego {
 	 * @return Un entero con la puntuación actual
 	 */
 	public int getPuntuacion() {
+		return puntuacion;
 	}
 	
 }
