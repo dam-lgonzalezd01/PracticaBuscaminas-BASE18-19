@@ -12,22 +12,38 @@ import javax.swing.JFrame;
  **
  */
 public class ActionBoton implements ActionListener{
-	JFrame ventanaPrincipal;
+	VentanaPrincipal ventanaPrincipal;
 	int fila;
 	int columna;
 	
-	public ActionBoton(JFrame ventanaPrincipal, int fila, int columna) {
+	
+	
+
+	public ActionBoton(VentanaPrincipal ventanaPrincipal, int fila, int columna) {
 		this.ventanaPrincipal = ventanaPrincipal;
 		this.fila = fila;
 		this.columna = columna;
 	}
-	
+
+
+
+
 	/**
 	 *Acción que ocurrirá cuando pulsamos uno de los botones.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		if (ventanaPrincipal.juego.abrirCasilla(fila, columna)) {
+			ventanaPrincipal.mostrarNumMinasAlrededor(fila, columna);
+			ventanaPrincipal.refrescarPantalla();
+			ventanaPrincipal.actualizarPuntuacion();
+			
+			if (ventanaPrincipal.juego.esFinJuego() == false) {
+				ventanaPrincipal.mostrarFinJuego(true);
+			}else {
+				ventanaPrincipal.mostrarFinJuego(false);
+			}
+		}
 	}
 
 }
