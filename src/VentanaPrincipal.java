@@ -139,7 +139,20 @@ public class VentanaPrincipal {
 	 * Método que inicializa todos los lísteners que necesita inicialmente el programa
 	 */
 	public void inicializarListeners(){
-		//TODO
+		for (int i = 0; i < botonesJuego.length; i++) {
+			for (int j = 0; j < botonesJuego[i].length; j++) {
+				botonesJuego[i][j].addActionListener(new ActionBoton(ventana, i,j));
+			}
+		}
+		botonEmpezar.addActionListener((e)->{
+			ventana.remove(panelEmpezar);
+			ventana.remove(panelImagen);
+			ventana.remove(panelJuego);
+			ventana.remove(panelPuntuacion);
+			juego = new ControlJuego();
+			inicializar();
+			refrescarPantalla();
+		});
 	}
 	
 	
@@ -156,7 +169,17 @@ public class VentanaPrincipal {
 	 * @param j: posición horizontal de la celda.
 	 */
 	public void mostrarNumMinasAlrededor(int i , int j) {
-		//TODO
+		int mina = juego.getMinasAlrededor(i, j);
+		for (int k = 0; k < correspondenciaColores.length; k++) {
+			if (mina == k) {
+				panelesJuego[i][j].removeAll();
+				JLabel numeroMinas = new JLabel(""+mina);
+				numeroMinas.setHorizontalAlignment(SwingConstants.CENTER);
+				numeroMinas.setForeground(correspondenciaColores[k]);
+				panelesJuego[i][j].add(numeroMinas);
+				refrescarPantalla();
+			}			
+		}
 	}
 	
 	
@@ -166,14 +189,28 @@ public class VentanaPrincipal {
 	 * @post : Todos los botones se desactivan excepto el de volver a iniciar el juego.
 	 */
 	public void mostrarFinJuego(boolean porExplosion) {
-		//TODO
+		if (porExplosion) {
+			JOptionPane.showMessageDialog(ventana, "Has perdido tu puntuacion es " +juego.getPuntuacion());
+			for (int i = 0; i < botonesJuego.length; i++) {
+				for (int j = 0; j < botonesJuego[i].length; j++) {
+					botonesJuego[i][j].setEnabled(false);
+				}
+			}
+		}else {
+			JOptionPane.showMessageDialog(ventana, "Has Ganado tu puntuacion es " +juego.getPuntuacion());
+			for (int j = 0; j < botonesJuego.length; j++) {
+				for (int i = 0; i < botonesJuego[j].length; i++) {
+					botonesJuego[j][i].setEnabled(false);
+				}
+			}
+		}
 	}
 
 	/**
 	 * Método que muestra la puntuación por pantalla.
 	 */
 	public void actualizarPuntuacion() {
-		//TODO
+		pantallaPuntuacion.setText(Integer.toString(juego.getPuntuacion()));
 	}
 	
 	/**
