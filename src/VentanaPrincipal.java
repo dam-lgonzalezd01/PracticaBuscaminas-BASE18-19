@@ -21,7 +21,6 @@ public class VentanaPrincipal {
 	JPanel panelEmpezar;
 	JPanel panelPuntuacion;
 	JPanel panelJuego;
-	VentanaPrincipal ventana1 = this;
 	// Todos los botones se meten en un panel independiente.
 	// Hacemos esto para que podamos cambiar después los componentes por otros
 	JPanel[][] panelesJuego;
@@ -240,6 +239,7 @@ public class VentanaPrincipal {
 	public void inicializar() {
 		// IMPORTANTE, PRIMERO HACEMOS LA VENTANA VISIBLE Y LUEGO INICIALIZAMOS LOS
 		// COMPONENTES.
+		System.out.println("inicializando");
 		ventana.setVisible(true);
 		inicializarComponentes();
 		inicializarListeners();

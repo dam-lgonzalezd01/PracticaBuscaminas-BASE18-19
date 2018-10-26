@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
 
 /**
  * Clase que implementa el listener de los botones del Buscaminas.
@@ -17,16 +16,11 @@ public class ActionBoton implements ActionListener{
 	int columna;
 	
 	
-	
-
 	public ActionBoton(VentanaPrincipal ventanaPrincipal, int fila, int columna) {
 		this.ventanaPrincipal = ventanaPrincipal;
 		this.fila = fila;
 		this.columna = columna;
 	}
-
-
-
 
 	/**
 	 *Acción que ocurrirá cuando pulsamos uno de los botones.
@@ -38,6 +32,7 @@ public class ActionBoton implements ActionListener{
 			ventanaPrincipal.refrescarPantalla();
 			ventanaPrincipal.actualizarPuntuacion();
 			
+		}else {
 			if (ventanaPrincipal.juego.esFinJuego() == false) {
 				ventanaPrincipal.mostrarFinJuego(true);
 			}else {
