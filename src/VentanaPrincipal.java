@@ -13,6 +13,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+/**
+ * En esta clase nos encargamos de crear la interfaz del buscaminas y hacer
+ * posible su funcionalidad Creando los listener de los botones que hacen
+ * posible que cuando cliques en el boton muestre si hay minas o no
+ * <p>Link:
+ * {@link inicializar()}</p>
+ * <p>{@code inicializar()}</p>
+ * @since 1.0
+ * @version 1.0
+ * @see ControlJuego
+ * @author Luis Gonzalez Duran
+ */
 public class VentanaPrincipal {
 
 	// La ventana principal, en este caso, guarda todos los componentes:
