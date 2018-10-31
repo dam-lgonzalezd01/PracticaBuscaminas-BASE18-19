@@ -19,7 +19,10 @@ import javax.swing.SwingConstants;
  * posible que cuando cliques en el boton muestre si hay minas o no
  * <p>Link:
  * {@link inicializar()}</p>
- * <p>{@code inicializar()}</p>
+ * <pre>{@code System.out.println("inicializando");
+		ventana.setVisible(true);
+		inicializarComponentes();
+		inicializarListeners();()}</pre>
  * @since 1.0
  * @version 1.0
  * @see ControlJuego
