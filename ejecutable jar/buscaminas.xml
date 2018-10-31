@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\alumno1819\Documents\CLASE\Desarrollo de interfaces\Ejercicios\Tema04\PracticaBuscaminas-BASE18-19\ejecutable jar\buscaminas.jar</jar>
-  <outfile>C:\Users\admin\Desktop\buscaminas.exe</outfile>
+  <outfile>C:\Users\alumno1819\Documents\CLASE\Desarrollo de interfaces\Ejercicios\Tema04\PracticaBuscaminas-BASE18-19\ejecutable jar\buscaminas.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon></icon>
+  <icon>C:\Users\alumno1819\Downloads\busca.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
